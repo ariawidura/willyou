@@ -1,0 +1,107 @@
+body {
+  margin: 0;
+  background: radial-gradient(circle at top right, #061018, #020710);
+  color: #00ff9d;
+  font-family: monospace;
+  overflow: hidden;
+  height: 100vh;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Matrix background */
+#matrix {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  display: block;
+  z-index: 1;
+}
+
+/* Welcome text */
+#welcome-text {
+  position: fixed;
+  top: 40%;
+  width: 100%;
+  text-align: center;
+  font-size: 24px;
+  color: #00ff9d;
+  opacity: 0;
+  letter-spacing: 2px;
+  z-index: 2;
+  animation: fadeIn 2.5s ease-in forwards;
+  animation-delay: 3.5s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Terminal */
+#terminal {
+  padding: 20px;
+  white-space: pre-wrap;
+  height: 85vh;
+  overflow-y: auto;
+}
+
+input {
+  background: #000;
+  color: #00ff9d;
+  border: 1px solid #00c878;
+  border-radius: 6px;
+  outline: none;
+  width: 80%;
+  font-family: monospace;
+  font-size: 16px;
+  padding: 6px;
+}
+
+.prompt {
+  position: fixed;
+  bottom: 10px;
+  left: 20px;
+  right: 20px;
+}
+
+.blink {
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* ASCII Cat */
+.ascii-cat {
+  position: fixed;
+  left: 20px;
+  bottom: 100px;
+  opacity: 0.3;
+  font-size: 13px;
+  line-height: 1;
+  white-space: pre;
+  color: #00ff9d;
+  text-shadow: 0 0 5px #00ffaa;
+}
+
+/* Floating hearts */
+.heart {
+  position: fixed;
+  font-size: 18px;
+  pointer-events: none;
+  animation: float 2.8s ease-in forwards;
+  color: #00ff9d;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); opacity: 0; }
+  20% { opacity: 1; }
+  100% { transform: translateY(-120px); opacity: 0; }
+}
